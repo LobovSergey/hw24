@@ -1,4 +1,8 @@
-def data_processing(command, value, data):
+import re
+from typing import List, Optional
+
+
+def data_processing(command: str, value: Optional[str], data: List[str]) -> List[str]:
     if command == "filter":
         return [string for string in data if value in string]
     elif command == "map":
@@ -14,8 +18,3 @@ def data_processing(command, value, data):
         return data[:int(value)]
     elif command == 'regex':
         return [string for string in data if re.compile(value).search(string)]
-
-
-
-
-
