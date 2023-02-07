@@ -43,7 +43,7 @@ def perform_query() -> tuple[str, int]:
         return 'No command', 400
 
     if command_1 and command_2 not in CMD:
-        return f'Unsupprted types', 400
+        return f'Unsupprted type', 400
 
     try:
         file_path = os.path.join(DATA_DIR, data.file_name)
